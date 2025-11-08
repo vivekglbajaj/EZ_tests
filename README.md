@@ -38,7 +38,7 @@ The website represents **EZ Labs’ creative and technology-driven brand**, show
 ### 🌗 Dark & Light Mode
 | Light Mode | Dark Mode |
 |-------------|------------|
-| ![Dark Mode Screenshot](./public/screenshot1.png) | ![Light Mode Screenshot](./public/screenshot3.png) | ![Dark Mode Screenshot](./public/screenshot2.png) |
+| ![Light Mode Screenshot](./public/screenshot3.png) | ![Dark Mode Screenshot](./public/screenshot2.png) |
 
 ![Postman Screenshot](./public/screenshot4.png)
 
