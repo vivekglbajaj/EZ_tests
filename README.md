@@ -1,145 +1,132 @@
-# 🎬 EZ Labs Frontend Assessment
+A modern and visually dynamic frontend web application built for EZ Labs Assessment — showcasing animations, real API integration, and a clean modular React architecture.
 
-**Live Project:** [https://ezlabs-homepage.vercel.app] (https://ezlabs-homepage.vercel.app)
-**GitHub Repository:** [https://github.com/pravesh5122003/ezlabs-homepage](https://github.com/pravesh5122003/ezlabs-homepage)
-
----
-
-## 🚀 Project Overview
-
-This project was developed as part of the **EZ Labs Frontend Assessment**.  
-It is a fully responsive, pixel-perfect React website designed according to the given Figma UI and requirements PDF.  
-
-The website represents **EZ Labs’ creative and technology-driven brand**, showcasing sections like:
-- Hero Section   
-- Services (Film Production, Branding, Art Curation)  
-- Portfolio  
-- Contact Form (with validation + API integration)
+**Live Project:** https://animated-cobbler-9bbe9f.netlify.app/
+**GitHub Repository:** https://github.com/vivekglbajaj/EZ_tests.git
 
 ---
 
-## 🧩 Features Implemented
+## 🧭 System Design & Project Flow
 
-✅ Fully Responsive Layout (Desktop → Tablet → Mobile)  
-✅ Light/Dark Mode Toggle
-✅ Animated Hero Section using **Framer Motion**  
-✅ About, Services, and Portfolio Sections 
-✅ Smooth Scroll Navigation between sections  
-✅ Modern UI built using **React + Tailwind CSS + Vite**  
-✅ Contact Form with validation (Name, Email, Phone, Message)  
-✅ Postman Verified API Response (Status: 201 Created)  
-✅ API Integrated Form Submission (`https://vernanbackend.ezlab.in/api/contact-us/`)  
-✅ Hosted on **Vercel** for production deployment  
+### 🏗️ **1. High-Level Design (HLD)**
+
+The architecture follows a **component-based modular design**, ensuring separation of concerns, reusability, and scalability.
+
+#### ⚙️ Architecture Overview
+---
+
+#### 🧱 HLD Diagram
++-----------------------------------------------------+
+
+FRONTEND (React)
+UI Layer (Tailwind + Framer Motion)
+State Mgmt (Context API)
+Routing (React Router DOM)
+API Integration (Axios)
++-----------------------------------------------------+
+
+BACKEND (EZ Labs API)
+Endpoint: https://vernanbackend.ezlab.in/api/contact-us/
+
+Handles: POST requests for contact submissions
+Validates input, stores message, returns JSON
++-----------------------------------------------------+
+
+
+This setup ensures that the **frontend is completely decoupled** from backend logic — allowing rapid UI iteration while maintaining reliable data communication.
 
 ---
 
-## 📸 Project Preview
+### 🧩 **2. Low-Level Design (LLD)**
 
-### 🌗 Dark & Light Mode
-| Light Mode | Dark Mode |
-|-------------|------------|
-| ![Light Mode Screenshot](./public/screenshot3.png) | ![Dark Mode Screenshot](./public/screenshot2.png) |
+#### 📂 Component Responsibilities
+| Component | Responsibility |
+|------------|----------------|
+| `Navbar.jsx` | Fixed top navigation bar with theme toggle |
+| `HeroSection.jsx` | Landing section with motion-based intro |
+| `Services.jsx` | Displays Film, Branding, and Art cards with hover tilt animations |
+| `AboutSection.jsx` | Displays brand statistics, quote, and client info |
+| `AboutTeam.jsx` | Interactive team showcase with animated silhouettes |
+| `ContactForm.jsx` | Functional form integrated with EZ Labs API |
+| `ThemeContext.jsx` | Manages dark/light mode globally |
 
-![Postman Screenshot](./public/screenshot4.png)
+#### 🧠 Flow of Operations
+1. **User visits** the homepage → smooth scroll animations activate (Framer Motion).
+2. **Navigates to a service page** (Film/Brand/Art) → new route renders content dynamically.
+3. **Visits Contact Form** → fills in details (all frontend validations applied).
+4. **Form submission** → triggers POST request via Axios.
+5. **Response 200 OK** → toast or message “Form Submitted Successfully”.
+6. **Invalid fields** → frontend validation prevents submission.
+
+---
+🧭 **Project Flow**
+1️⃣ User visits the landing page → Hero section animation triggers.  
+2️⃣ Scroll to Services → Hover cards animate and tilt on motion.  
+3️⃣ About section → Overlapping stat cards appear with smooth motion.  
+4️⃣ Team section → Animated silhouettes and call-to-action.  
+5️⃣ Contact form → User submits → API call → Success message shown.  
+
+
+## 🌟 Features Implemented
+
+- ✅ **Modern UI with motion effects**
+- ✅ **Fully responsive for all devices**
+- ✅ **Real API integration** (`https://vernanbackend.ezlab.in/api/contact-us/`)
+- ✅ **Frontend form validation (name, email, phone, message)**
+- ✅ **Dynamic dark/light theme**
+- ✅ **Animated icons & gradients**
+- ✅ **Role-based storytelling for team section**
+- ✅ **Creative 3D-like overlapping layouts**
+- ✅ **Performance optimized**
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 Key Design Choices
 
-| Technology | Purpose |
-|-------------|----------|
-| **React (Vite)** | Frontend framework |
-| **Tailwind CSS** | Styling and responsiveness |
-| **Framer Motion** | Smooth animations |
-| **Axios** | API handling |
-| **React Hook Form** | Form validation |
-| **Vercel** | Hosting and deployment |
-
----
-
-## 🧮 Folder Structure
-
-ezlabs-homepage/
-│
-├── src/
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── Hero.jsx
-│ │ ├── About.jsx
-│ │ ├── Services.jsx
-│ │ ├── Portfolio.jsx
-│ │ └── ContactForm.jsx
-│ │
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── index.css
-│
-├── public/
-├── package.json
-└── tailwind.config.js
+| Aspect | Approach |
+|--------|-----------|
+| **Styling** | Tailwind CSS for utility-first rapid design |
+| **Animation** | Framer Motion for smooth transitions |
+| **State Management** | Context API for theme control |
+| **API Integration** | Axios for structured error handling |
+| **Routing** | React Router DOM (client-side navigation) |
+| **Validation** | Regex-based checks for form inputs |
+| **Responsiveness** | Mobile-first grid and flex architecture |
 
 ---
 
-## 🧠 Learning Highlights
-- Improved responsive design skills with **Tailwind CSS**
-- Implemented **form validation and API handling** with Axios + React Hook Form
-- Learned **CI/CD deployment** using GitHub + Vercel
-- Enhanced understanding of real-world frontend workflows
+## 🧾 API Integration
 
----
+### Endpoint:
 
-## ⚙️ Setup Instructions
+🛠️ Installation & Setup
+# Clone repository
+git clone https://github.com/vivekglbajaj/EZ_TEST.git
 
-Follow these steps to run this project locally 👇
-
-### ** Clone the repository**
-```bash
-git clone https://github.com/pravesh5122003/ezlabs-homepage.git
+# Navigate into folder
 cd ezlabs-homepage
+
+# Install dependencies
 npm install
+
+# Start local development
 npm run dev
 
-## 💬 API Integration Details
 
-**Contact Form API Endpoint:**  
+App runs on → http://localhost:5173
 
-**Request Method:** `POST`  
-**Content-Type:** `application/json`
+🧪 API Testing (Postman)
+Field	Value
+Method	POST
+URL	https://vernanbackend.ezlab.in/api/contact-us/
 
----
+Headers	Content-Type: application/json
+Body	{ "name": "Vivek", "email": "vivek@gmail.com", "phone": "9876543210", "message": "Testing API" }
 
-### 📨 Example Request Body
+<img width="1039" height="757" alt="Screenshot 2025-11-09 at 3 07 22 PM" src="https://github.com/user-attachments/assets/a9255a05-b263-417a-9572-1c5a4c714813" />
 
-```json
-{
-  "name": "Pravesh sachan",
-  "email": "pravesh@gmail.com",
-  "phone": "9044379193",
-  "message": "This is a test message from the contact form."
-}
+## 🧑‍💻 Author
+**Vivek Kumar Yadav**  
+Frontend Developer | React.js | Java | UI/UX Design  
 
-{
-  "message": "Contact request submitted and email sent successfully",
-  "data": {
-    "id": 3503,
-    "name": "Pravesh sachan",
-    "email": "pravesh@gmail.com",
-    "phone": "9044379193",
-    "message": "This is a test message from Postman to verify API connectivity.",
-    "created_at": "2025-11-08T19:20:49.075863Z",
-    "updated_at": "2025-11-08T19:20:49.075812Z"
-  }
-}
-
-
-## 👨‍💻 Developer
-
-**Pravesh Sachan**  
-Frontend Developer | React Enthusiast  
-📍 India  
-💼 [LinkedIn](https://www.linkedin.com/in/pravesh-sachan/) | [GitHub](https://github.com/pravesh5122003)
-
----
-
-# EZ_TEST
-# EZ_tests
+🔗 **Portfolio:** [LinkedIn](https://linkedin.com/in/vivek-yadav)  
+💻 **GitHub:** [github.com/vivekglbajaj](https://github.com/vivekglbajaj)
